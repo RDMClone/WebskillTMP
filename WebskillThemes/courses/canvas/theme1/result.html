@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Тема 1. Результат(JS)</title>
+    <link rel="icon" href="../../../images/favicon.png" type="image/x-icon">
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/styles/atom-one-dark.min.css">
+    <link rel="stylesheet" href="../../../styles/master.css">
+    <link rel="stylesheet" href="styles/style.css">
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" defer></script>
+    <script src="../../../scripts/activate_highlight.js" defer></script>
+
+    <script src="../../../scripts/additional_content_button.js" defer></script>
+</head>
+
+<body>
+    <!--#region Header -->
+    <div id="templatemo_header_wrapper">
+        <div id="templatemo_header">
+            <div id="header">
+                <h1 align="center"><br><a href="#" class="themeA">Тема 1<br><br>Введення в Canvas</a></h1>
+            </div>
+        </div>
+    </div>
+    <!--#endregion Header -->
+
+    <!--#region ChapterSelector -->
+    <div class="theme-main-container chapter-selector-container">
+        <a class="button-main chapter-selector-link" href="theme.html">
+            <p class="chapter-selector-text">Теорія</p>
+        </a>
+        <a class="button-main chapter-selector-link" href="tasks.html">
+            <p class="chapter-selector-text">Завдання</p>
+        </a>
+    </div>
+    <!--#endregion ChapterSelector -->
+
+    <div class="theme-main-container" align="center">
+        <h1 class="theme-header"><span class="attention-code-second">HTML</span> заготовка</h1>
+        <p class="theme-text-container theme-text-container-info" style="font-size: 30px;">
+            <span class="attention-code-second">HTML</span> заготовка для роботи з
+            <span class="attention-code">canvas</span>:
+            <a class="main-link" target="_blank" href="../extra-files/html_template.html">ЗАГОТОВКА(натисни на мене)</a>
+        </p>
+    </div>
+
+    <div class="theme-main-container" align="center">
+        <h1 class="theme-header result-page-announcer">Відповіді на завдання</h1>
+    </div>
+
+    <div class="theme-main-container" align="center">
+        <h1 class="theme-header">Завдання №1 - Коло</h1>
+        <p class="theme-text-container theme-text-container-info">Відтворіть показане на зображені, кольори та розміри
+            на ваш розсуд.</p>
+
+        <div class="theme-additional-content-container-main">
+            <button class="button-main theme-additional-content-expander">Показати</button>
+            <div class="theme-additional-content-container collapsed">
+                <div class="code-and-explanation-container">
+                    <pre>
+                        <code class="language-js">
+CTX.beginPath()
+CTX.fillStyle = 'green'
+CTX.arc(canvas.width / 2, canvas.height / 2, 100, 0, Math.PI * 2, true)
+CTX.closePath()
+CTX.fill()
+                        </code>
+                    </pre>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="theme-main-container" align="center">
+        <h1 class="theme-header">Завдання №2 - Прямокутник</h1>
+        <p class="theme-text-container theme-text-container-info">Відтворіть показане на зображені, кольори та розміри
+            на ваш розсуд.</p>
+
+        <div class="theme-additional-content-container-main">
+            <button class="button-main theme-additional-content-expander">Показати</button>
+            <div class="theme-additional-content-container collapsed">
+                <div class="code-and-explanation-container">
+                    <pre>
+                        <code class="language-js">
+CTX.beginPath()
+CTX.fillStyle = 'green'
+CTX.rect(canvas.width / 2, canvas.height / 2, 200, 200)
+CTX.closePath()
+CTX.fill()
+                        </code>
+                    </pre>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="theme-main-container" align="center">
+        <h1 class="theme-header">Завдання №3 - Коло і Прямокутник</h1>
+        <p class="theme-text-container theme-text-container-info">Відтворіть показане на зображені, кольори та розміри
+            на ваш розсуд.</p>
+
+        <div class="theme-additional-content-container-main">
+            <button class="button-main theme-additional-content-expander">Показати</button>
+            <div class="theme-additional-content-container collapsed">
+                <div class="code-and-explanation-container">
+                    <pre>
+                        <code class="language-js">
+CTX.beginPath()
+CTX.fillStyle = 'green'
+CTX.rect(CANVAS.width / 2 - 250 - 200, CANVAS.height / 2 - 100, 200, 200)
+CTX.closePath()
+CTX.fill()
+
+CTX.beginPath()
+CTX.fillStyle = 'blue'
+CTX.arc(CANVAS.width / 2 + 200, CANVAS.height / 2, 100, 0, Math.PI * 2, true)
+CTX.closePath()
+CTX.fill()
+                        </code>
+                    </pre>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="theme-main-container" align="center">
+        <h1 class="theme-header">Завдання №4 - Коло в Прямокутнику</h1>
+        <p class="theme-text-container theme-text-container-info">Відтворіть показане на зображені, кольори та розміри
+            на ваш розсуд.<br>
+            При бажанні можна зробити Прямокутник в Колі, Коло в Колі або Прямокутник в Прямокутнику.
+        </p>
+
+        <div class="theme-additional-content-container-main">
+            <button class="button-main theme-additional-content-expander">Показати</button>
+            <div class="theme-additional-content-container collapsed">
+                <div class="code-and-explanation-container">
+                    <pre>
+                        <code class="language-js">
+CTX.beginPath()
+CTX.fillStyle = 'green'
+CTX.rect(CANVAS.width / 2 - 250, CANVAS.height / 2 - 250, 500, 500)
+CTX.closePath()
+CTX.fill()
+
+CTX.beginPath()
+CTX.fillStyle = 'blue'
+CTX.arc(CANVAS.width / 2, CANVAS.height / 2, 100, 0, Math.PI * 2, true)
+CTX.closePath()
+CTX.fill()
+                        </code>
+                    </pre>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="theme-main-container" align="center">
+        <h1 class="theme-header">Завдання №5 - Додатково</h1>
+        <p class="theme-text-container theme-text-container-info">Поміркуйте як би виглядав код для 5/10/20 фігур, якщо
+            є час та бажання напишіть його. <br>
+            Чи зручно таким способом малювати фігури? Як можна спростити цей процес?
+            Згадайте теми по JS.
+            Чи проходили ви щось що могло би вам допомогти?
+        </p>
+
+        <div class="theme-additional-content-container-main">
+            <button class="button-main theme-additional-content-expander">Показати</button>
+            <div class="theme-additional-content-container collapsed">
+                <p>Функції, потрібно використоувати функції.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div id="templatemo_footer_wrapper">
+        <div id="templatemo_footer">
+            Copyright © 2022 WebSkill - Всі права захищено.
+        </div>
+    </div>
+    <!-- Footer -->
+</body>
+
+</html>

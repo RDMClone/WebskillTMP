@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Тема 1. Введення в Canvas</title>
+    <link rel="icon" href="../../../images/favicon.png" type="image/x-icon">
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/styles/atom-one-dark.min.css">
+    <link rel="stylesheet" href="../../../styles/master.css">
+    <link rel="stylesheet" href="styles/style.css">
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" defer></script>
+    <script src="../../../scripts/activate_highlight.js" defer></script>
+
+    <script src="../../../scripts/additional_content_button.js" defer></script>
+</head>
+
+<body>
+    <!--#region Header -->
+    <div id="templatemo_header_wrapper">
+        <div id="templatemo_header">
+            <div id="header">
+                <h1 align="center"><br><a href="#" class="themeA">Тема 1<br><br>Введення в Canvas</a></h1>
+            </div>
+        </div>
+    </div>
+    <!--#endregion Header -->
+
+    <!--#region ChapterSelector -->
+    <div class="theme-main-container chapter-selector-container">
+        <a class="button-main chapter-selector-link" href="theme.html">
+            <p class="chapter-selector-text">Теорія</p>
+        </a>
+        <a class="button-main chapter-selector-link" href="tasks.html">
+            <p class="chapter-selector-text">Завдання</p>
+        </a>
+    </div>
+    <!--#endregion ChapterSelector -->
+
+    <div class="color-legend">
+        <p><span class="attention-code">Такий колір означає що код зв'язаний з JS</span></p>
+        <p><span class="attention-code-second">Такий колір означає що код зв'язаний з HTML</span></p>
+        <p><span class="attention-highlight">Такий колір означає що на це необхідно звернути увагу</span></p>
+    </div>
+
+    <div class="theme-main-container" align="center">
+        <h1 class="theme-header">Що таке <span class="attention-code">JavaScript Canvas</span>?</h1>
+        <p class="theme-text-container theme-text-container-info"><span class="attention-code">JavaScript Canvas</span>
+            є <span class="attention-highlight">інструментом</span>, який дозволяє
+            <span class="attention-highlight">малювати різні картинки та
+                створювати
+                анімації</span>
+            на веб-сторінках. <br> Ви можете створювати <span class="attention-highlight">свої власні графічні
+                елементи</span>, такі як кола,
+            прямокутники,
+            лінії та
+            наповнювати їх кольорами, щоб зробити свої сторінки цікавішими та красивими.
+            <br>Крім того, <span class="attention-code">JavaScript Canvas</span> також може бути використаний для
+            <span class="attention-highlight">створення ігор</span> на веб-сайтах.
+        </p>
+
+        <div class="theme-additional-content-container-main">
+            <button class="button-main theme-additional-content-expander">Показати</button>
+
+            <div class="theme-additional-content-container collapsed">
+                <video src="images-theme/brakeout.mp4" autoplay muted loop></video>
+                <img src="images-theme/shapes1.png" class="theme-additional-img" alt="">
+                <img src="images-theme/shapes2.png" class="theme-additional-img" alt="">
+            </div>
+        </div>
+    </div>
+
+    <div class="theme-main-container" align="center">
+        <h1 class="theme-header"><span class="attention-highlight">Координатна система</span>
+            <span class="attention-code">canvas</span>.<br>
+            Або: як це працює?
+        </h1>
+        <p class="theme-text-container theme-text-container-info">
+            <span class="attention-highlight">Координатна система</span>
+            - це спосіб визначення положення об'єкта на площині. В
+            <span class="attention-highlight">2D</span>
+            координатній системі, площина
+            представлена двома взаємно перпендикулярними вісьями(одна - низ-верх, а друга - ліво-право), горизонтальною
+            (вісь X) та вертикальною (вісь Y).<br>
+            В <span class="attention-code">JavaScript Canvas</span>, ви можете малювати фігури на цій площині за
+            допомогою контексту
+            <span class="attention-code">CTX</span>.
+            <span class="attention-highlight">Вісь X простирається вправо від початку координат (0,0)</span>, а
+            <span class="attention-highlight">вісь Y простирається вниз від початку координат (0,0)</span>.
+        </p>
+
+        <div class="theme-additional-content-container-main">
+            <button class="button-main theme-additional-content-expander">Показати</button>
+            <div class="theme-additional-content-container collapsed">
+                <img class="theme-additional-img" src="images-theme/pixelcords.png" alt="">
+            </div>
+        </div>
+    </div>
+
+    <div class="theme-main-container" align="center">
+        <h1 class="theme-header">Налаштування <span class="attention-code">canvas</span></h1>
+        <p class="theme-text-container theme-text-container-info">Зараз ми розглянемо як налаштувати canvas для того,
+            щоб почати його використовувати.</p>
+
+        <div class="theme-additional-content-container-main">
+            <button class="button-main theme-additional-content-expander">Показати</button>
+            <div class="theme-additional-content-container collapsed">
+
+                <div class="code-and-explanation-container">
+                    <p class="theme-text-container theme-text-container-code-comment">Почнемо наше ознайомлення з <span
+                            class="attention-code">canvas</span>
+                        починаючи з його створення елемент canvas
+                        в <span class="attention-code-second">HTML</span>.<br>Для цього вам потрібно додати наступний
+                        код до вашого <span class="attention-code-second">HTML</span> файлу:</p>
+                    <pre>
+                        <code class="language-html">
+&lt;canvas id=&quot;myCanvas&quot;&gt;&lt;/canvas&gt;
+                        </code>
+                    </pre>
+                </div>
+
+                <div class="code-and-explanation-container">
+                    <p class="theme-text-container theme-text-container-code-comment">Змінна <span
+                            class="attention-code">canvas</span> містить елемент
+                        <span class="attention-code-second">canvas</span>, який ми знайшли на сторінці за
+                        допомогою його ідентифікатора <span class="attention-code-second">"myCanvas"</span>.<br>
+                        Змінна <span class="attention-code">CTX</span> це
+                        <span class="attention-highlight">об'єкт</span>, що
+                        надає можливість малювати на <span class="attention-code">canvas</span>. Він дозволяє
+                        використовувати
+                        методи для малювання різних графічних об'єктів, таких як кола та прямокутники, а також виводити
+                        текст на сторінку.
+                    </p>
+                    <pre>
+                        <code>
+// Отримуємо елемент canvas за допомогою його id
+const CANVAS = document.getElementById('myCanvas');
+// Отримуємо контекст рендерингу(малювання) canvas (2D або 3D)
+const CTX = canvas.getContext('2d');
+                        </code>
+                    </pre>
+                </div>
+
+                <div class="code-and-explanation-container">
+                    <p class="theme-text-container theme-text-container-code-comment">Змінна <span
+                            class="attention-code">canvas</span> має свої властивості, які
+                        можна налаштувати.
+                        Одна з таких властивостей - це розмір <span class="attention-code">canvas</span>.
+                        Ми можемо налаштувати розмір <span class="attention-code">canvas</span> за допомогою властивості
+                        <span class="attention-code">canvas.width</span>
+                        та <span class="attention-code">canvas.height</span>. <br>
+                        Також можна задати колір фону за допомогою властивості <span
+                            class="attention-code-second">background-color</span> у <span
+                            class="attention-code-second">CSS</span> або <span
+                            class="attention-code">CTX.fillStyle</span> ми по суті будемо заливати <span
+                            class="attention-code">canvas</span> вибраним кольором.<br>
+                        Метод <span class="attention-code">CTX.fillRect</span> малює заповнений прямокутник на
+                        <span class="attention-code">canvas</span> з використанням поточного кольору який ви записали у
+                        <span class="attention-code">CTX.fillStyle</span>.
+                    </p>
+                    <pre>
+                        <code>
+// Встановлюємо розмір canvas
+CANVAS.width = 500;
+CANVAS.height = 500;
+// Задаємо колір яким будемо заповнювати
+CTX.fillStyle = 'lightblue';
+// Заповнюємо всю область canvas кольором
+CTX.fillRect(0, 0, CANVAS.width, CANVAS.height);
+                        </code>
+                    </pre>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="theme-main-container" align="center">
+        <h1 class="theme-header">Малювання кола</h1>
+        <p class="theme-text-container theme-text-container-info">Цей код малює <span
+                class="attention-code">green</span>(зелене) коло на canvas з центром у
+            точці
+            <span class="attention-code">(300, 300)</span> та радіусом <span class="attention-code">100</span> пікселів.
+            Розберімо його починаючи з початку:
+        </p>
+
+        <div class="theme-additional-content-container-main">
+            <button class="button-main theme-additional-content-expander">Показати</button>
+            <div class="theme-additional-content-container collapsed">
+                <div class="code-and-explanation-container">
+                    <p class="theme-text-container theme-text-container-code-comment" style="font-size: 30px;">
+                        <span class="attention-code-second">HTML</span> заготовка для роботи з
+                        <span class="attention-code">canvas</span>:
+                        <a class="main-link" target="_blank" href="../extra-files/html_template.html">ЗАГОТОВКА(натисни
+                            на
+                            мене)</a>
+                    </p>
+
+                </div>
+
+                <div class="code-and-explanation-container">
+                    <p class="theme-text-container theme-text-container-code-comment">Цей рядок починає шлях, або лінію,
+                        по якій буде малюватись фігура.</p>
+                    <pre>
+                        <code class="language-js">
+CTX.beginPath() //початок малювання фігури
+                        </code>
+                    </pre>
+                </div>
+
+                <div class="code-and-explanation-container">
+                    <p class="theme-text-container theme-text-container-code-comment">Цей рядок встановлює колір, який
+                        буде використовуватись для заливки фігури.
+                    </p>
+                    <pre>
+                        <code class="language-js">
+CTX.fillStyle = 'green' //встановлення кольору фігури
+                        </code>
+                    </pre>
+                </div>
+
+                <div class="code-and-explanation-container">
+                    <p class="theme-text-container theme-text-container-code-comment">Цей рядок малює коло з центром в
+                        точці <span class="attention-code">(300,
+                            300)</span>, радіусом <span class="attention-code">100</span> пікселів та
+                        початковим кутом <span class="attention-code">0</span> радіанів (це означає, що малюється повний
+                        круг), кінцевим кутом <span class="attention-code">Math.PI * 2</span>
+                        (це також означає повний круг, оскільки 2π радіанів = 360 градусів) та за годинниковою стрілкою
+                        (<span class="attention-code">true</span> означає, що фігуру треба малювати в цьому напрямку):
+                    </p>
+                    <pre>
+                        <code class="language-js">
+CTX.arc(300, 300, 100, 0, Math.PI * 2, true) //малювання кола - аргументи: (x, y, радіус, п. кут, к. кут, по год. стрілці)
+                        </code>
+                    </pre>
+                </div>
+
+                <div class="code-and-explanation-container">
+                    <p class="theme-text-container theme-text-container-code-comment">Цей рядок закриває <span
+                            class="attention-code">path</span>(шлях):</p>
+                    <pre>
+                        <code class="language-js">
+CTX.closePath() //кінець малювання фігури
+                    </code>
+                    </pre>
+                </div>
+
+                <div class="code-and-explanation-container">
+                    <p class="theme-text-container theme-text-container-code-comment">Цей рядок заливає фігуру вибраним
+                        кольором та виводить її на
+                        <span class="attention-code">canvas</span>:
+                    </p>
+                    <pre>
+                        <code class="language-js">
+CTX.fill() //вивід фігури на екран
+                        </code>
+                    </pre>
+                </div>
+
+                <div class="code-and-explanation-container">
+                    <p class="theme-text-container theme-text-container-code-comment">Весь код:</p>
+                    <pre>
+                        <code class="language-js">
+CTX.beginPath() //початок малювання фігури
+CTX.fillStyle = 'green' //встановлення кольору фігури
+CTX.arc(300, 300, 100, 0, Math.PI * 2, true) //малювання кола - аргументи: (x, y, радіус, п. кут, к. кут, по год. стрілці)
+CTX.closePath() //кінець малювання фігури
+CTX.fill() //вивід фігури на екран
+                        </code>
+                    </pre>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="theme-main-container" align="center">
+        <h1 class="theme-header">Малювання прямокутника</h1>
+        <p class="theme-text-container theme-text-container-info">Цей рядок коду використовує метод <span
+                class="attention-code">rect()</span>, щоб
+            намалювати прямокутник на полотні.
+            Прямокутник матиме свій <span class="attention-highlight">верхній лівий кут</span> у координатах <span
+                class="attention-code">(300, 300)</span> і
+            матиме ширину
+            <span class="attention-code">200</span> пікселів і висоту
+            <span class="attention-code">100</span>
+            пікселів:
+        </p>
+
+        <div class="theme-additional-content-container-main">
+            <button class="button-main theme-additional-content-expander">Показати</button>
+            <div class="theme-additional-content-container collapsed">
+                <div class="code-and-explanation-container">
+                    <p class="theme-text-container theme-text-container-code-comment" style="font-size: 30px;">
+                        <span class="attention-code-second">HTML</span> заготовка для роботи з
+                        <span class="attention-code">canvas</span>:
+                        <a class="main-link" target="_blank" href="../extra-files/html_template.html">ЗАГОТОВКА(натисни
+                            на
+                            мене)</a>
+                    </p>
+
+                </div>
+
+                <div class="code-and-explanation-container">
+                    <p class="theme-text-container theme-text-container-code-comment">Цей рядок починає шлях, або лінію,
+                        по якій буде малюватись фігура.</p>
+                    <pre>
+                        <code class="language-js">
+CTX.beginPath() //початок малювання фігури
+                        </code>
+                    </pre>
+                </div>
+
+                <div class="code-and-explanation-container">
+                    <p class="theme-text-container theme-text-container-code-comment">Цей рядок встановлює колір, який
+                        буде використовуватись для заливки фігури.
+                    </p>
+                    <pre>
+                        <code class="language-js">
+CTX.fillStyle = 'green' //встановлення кольору фігури
+                        </code>
+                    </pre>
+                </div>
+
+                <div class="code-and-explanation-container">
+                    <p class="theme-text-container theme-text-container-code-comment">Цей рядок коду використовує метод
+                        <span class="attention-code">rect()</span>, щоб намалювати прямокутник на полотні. Прямокутник
+                        матиме свій
+                        <span class="attention-highlight">верхній лівий кут</span>
+                        у координатах (300, 300) і матиме ширину
+                        <span class="attention-code">200</span> пікселів і висоту
+                        <span class="attention-code">100</span> пікселів.
+                    </p>
+                    <pre>
+                        <code class="language-js">
+CTX.rect(300, 300, 200, 100) //малювання прямокутника - аргументи: (x, y, ширина, висота)
+                        </code>
+                    </pre>
+                </div>
+
+                <div class="code-and-explanation-container">
+                    <p class="theme-text-container theme-text-container-code-comment">Цей рядок закриває <span
+                            class="attention-code">path</span>(шлях):</p>
+                    <pre>
+                        <code class="language-js">
+CTX.closePath() //кінець малювання фігури
+                    </code>
+                    </pre>
+                </div>
+
+                <div class="code-and-explanation-container">
+                    <p class="theme-text-container theme-text-container-code-comment">Цей рядок заливає фігуру вибраним
+                        кольором та виводить її на
+                        <span class="attention-code">canvas</span>:
+                    </p>
+                    <pre>
+                        <code class="language-js">
+CTX.fill() //вивід фігури на екран
+                        </code>
+                    </pre>
+                </div>
+
+                <div class="code-and-explanation-container">
+                    <p class="theme-text-container theme-text-container-code-comment">Весь код:</p>
+                    <pre>
+                        <code class="language-js">
+CTX.beginPath() //початок малювання фігури
+CTX.fillStyle = 'green' //встановлення кольору фігури
+CTX.arc(300, 300, 100, 0, Math.PI * 2, true) //малювання кола - аргументи: (x, y, радіус, п. кут, к. кут, по год. стрілці)
+CTX.closePath() //кінець малювання фігури
+CTX.fill() //вивід фігури на екран
+                        </code>
+                    </pre>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div id="templatemo_footer_wrapper">
+        <div id="templatemo_footer">
+            Copyright © 2022 WebSkill - Всі права захищено.
+        </div>
+    </div>
+    <!-- Footer -->
+</body>
+
+</html>
